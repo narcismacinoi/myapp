@@ -11,6 +11,42 @@
     tools:context="com.example.narcis.sportnews.Register"
     tools:showIn="@layout/activity_register">
 
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etUsername"
+        android:hint="username"
+        android:textAlignment="center"
+        android:layout_above="@+id/etPassword"
+        android:layout_alignLeft="@+id/etPassword"
+        android:layout_alignStart="@+id/etPassword"
+        android:layout_alignRight="@+id/etPassword"
+        android:layout_alignEnd="@+id/etPassword" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etName"
+        android:hint="name"
+        android:textAlignment="center"
+        android:layout_above="@+id/etAge"
+        android:layout_alignLeft="@+id/etPassword"
+        android:layout_alignStart="@+id/etPassword"
+        android:layout_alignRight="@+id/etPassword"
+        android:layout_alignEnd="@+id/etPassword" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/etAge"
+        android:textAlignment="center"
+        android:hint="age"
+        android:layout_above="@+id/bRegister"
+        android:layout_alignRight="@+id/etName"
+        android:layout_alignEnd="@+id/etName"
+        android:layout_alignLeft="@+id/etName"
+        android:layout_alignStart="@+id/etName" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +55,7 @@
         android:id="@+id/etPassword"
         android:textAlignment="center"
         android:hint="password"
-        android:layout_above="@+id/bRegister"
+        android:layout_above="@+id/etName"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -29,42 +65,8 @@
         android:id="@+id/bRegister"
         android:textColor="#FFFFFF"
         android:background="#0D99D6"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etUsername"
-        android:layout_above="@+id/etPassword"
-        android:layout_alignLeft="@+id/etPassword"
-        android:layout_alignStart="@+id/etPassword"
-        android:layout_alignRight="@+id/etPassword"
-        android:layout_alignEnd="@+id/etPassword"
-        android:hint="username"
-        android:textAlignment="center" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etAge"
-        android:layout_above="@+id/etUsername"
-        android:layout_alignLeft="@+id/etUsername"
-        android:layout_alignStart="@+id/etUsername"
-        android:layout_alignRight="@+id/etUsername"
-        android:layout_alignEnd="@+id/etUsername"
-        android:textAlignment="center"
-        android:hint="age" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/etName"
-        android:layout_above="@+id/etAge"
-        android:layout_alignRight="@+id/etAge"
-        android:layout_alignEnd="@+id/etAge"
-        android:layout_alignLeft="@+id/etAge"
-        android:layout_alignStart="@+id/etAge"
-        android:hint="name"
-        android:textAlignment="center" />
 </RelativeLayout>
