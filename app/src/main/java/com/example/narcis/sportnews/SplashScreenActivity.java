@@ -23,3 +23,4 @@ public class SplashScreenActivity extends Activity {
         }, 3000);
     }
 }
+

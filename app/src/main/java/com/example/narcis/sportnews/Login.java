@@ -12,12 +12,10 @@ import android.widget.TextView;
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     Button bLogin;
-    EditText etUsername, etPassword;
     TextView registerLink;
+    EditText etUsername, etPassword;
+
     UserLocalStore userLocalStore;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +52,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void authenticate(User user) {
-        ServerRequests serverRequests = new ServerRequests(this);
-        serverRequests.fetchUserDataAsyncTask(user, new GetUserCallback() {
+        ServerRequests serverRequest = new ServerRequests(this);
+        serverRequest.fetchUserDataAsyncTask(user, new GetUserCallback() {
             @Override
             public void done(User returnedUser) {
                 if (returnedUser == null) {
@@ -70,14 +68,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private void showErrorMessage() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Login.this);
         dialogBuilder.setMessage("Incorrect user details");
-        dialogBuilder.setPositiveButton("OK", null);
+        dialogBuilder.setPositiveButton("Ok", null);
         dialogBuilder.show();
     }
 
     private void logUserIn(User returnedUser) {
         userLocalStore.storeUserData(returnedUser);
         userLocalStore.setUserLoggedIn(true);
-
         startActivity(new Intent(this, MainActivity.class));
     }
 }
