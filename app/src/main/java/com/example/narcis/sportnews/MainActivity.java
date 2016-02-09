@@ -71,11 +71,4 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         etName.setText(user.name);
         etAge.setText(user.age + "");
     }
-    private  class MyBrowser extends WebViewClient {
-        @Override
-        public  boolean shouldOverrideUrlLoading(WebView view, String url ){
-            view.loadUrl(url);
-            return true;
-        }
-    }
 }
