@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -26,7 +28,13 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         bLogout.setOnClickListener(this);
 
         userLocalStore = new UserLocalStore(this);
+
+        String url = "http://m.gsp.ro";
+        WebView view = (WebView) this.findViewById(R.id.webView);
+        view.getSettings().setJavaScriptEnabled(true);
+        view.loadUrl(url);
     }
+
 
     @Override
     public void onClick(View v) {
