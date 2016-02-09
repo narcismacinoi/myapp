@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -19,11 +20,6 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String url = "http://m.gsp.ro";
-        WebView view = (WebView) this.findViewById(R.id.webView);
-        view.getSettings().setJavaScriptEnabled(true);
-        view.loadUrl(url);
-
         etUsername = (EditText) findViewById(R.id.etUsername);
         etName = (EditText) findViewById(R.id.etName);
         etAge = (EditText) findViewById(R.id.etAge);
@@ -32,7 +28,13 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         bLogout.setOnClickListener(this);
 
         userLocalStore = new UserLocalStore(this);
+
+        String url = "http://m.gsp.ro";
+        WebView view = (WebView) this.findViewById(R.id.webView);
+        view.getSettings().setJavaScriptEnabled(true);
+        view.loadUrl(url);
     }
+
 
     @Override
     public void onClick(View v) {
@@ -68,5 +70,12 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         etUsername.setText(user.username);
         etName.setText(user.name);
         etAge.setText(user.age + "");
+    }
+    private  class MyBrowser extends WebViewClient {
+        @Override
+        public  boolean shouldOverrideUrlLoading(WebView view, String url ){
+            view.loadUrl(url);
+            return true;
+        }
     }
 }
