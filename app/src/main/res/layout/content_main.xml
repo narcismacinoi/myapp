@@ -9,7 +9,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.narcis.sportnews.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:id="@+id/main_content">
+
+    <ListView
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_sliding_menu"
+        android:background="#FFFFFF"
+        android:choiceMode="singleChoice"
+        android:layout_gravity="start"></ListView>
 
     <Button
         android:layout_width="wrap_content"
